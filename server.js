@@ -76,7 +76,7 @@ app.post('/auth', async (req, res) => {
 
         console.log(`OTP for ${user.email} ${otp}`); // Replace with email/SMS in production
 
-        res.status(200).json({ message: 'OTP sent to registered email/mobile', otpRequired: true });
+        res.status(200).json({ message: 'OTP sent to registered email/mobile', otpRequired: true, otp }); // Sending OTP in response for testing
     } catch (err) {
         console.error('Auth error:', err);
         res.status(500).json({ message: 'Server error' });
